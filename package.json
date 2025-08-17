@@ -1,0 +1,68 @@
+{
+  "name": "intento-vscode-translator",
+  "displayName": "Intento VSCode Translator",
+  "description": "Translate selected text via Inten.to API",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.103.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "publisher": "local",
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [{
+      "command": "intento.translate",
+      "title": "Inten.to: Translate"
+      }],
+     "menus": {
+      "editor/context": [
+        {
+          "when": "editorHasSelection",
+          "command": "intento.translate",
+          "group": "navigation@1"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "intento.translate",
+        "key": "alt+shift+t",
+        "mac": "alt+shift+t",
+        "when": "editorTextFocus && editorHasSelection"
+      }
+    ],
+
+    "configuration": {
+      "title": "Intento VSCode Translator",
+      "properties": {
+        "intento.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Your API key for the Inten.to API.",
+          "secret": true
+        },
+        "intento.targetLanguage": {
+          "type": "string",
+          "default": "en",
+          "description": "The target language for translation (e.g., en, pt, es, it, de, fr, ua, ru)."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "pnpm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.103.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "axios": "^1.6.0",
+    "eslint": "^9.32.0",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
