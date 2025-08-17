@@ -60,7 +60,7 @@
   "scripts": {
     "lint": "eslint .",
     "pretest": "pnpm run lint",
-    "test": "vscode-test",
+    "test": "vscode-test --extensionPath=./intento-vscode-translator-0.0.4.vsix",
     "build": "pnpm run build:extension && pnpm run build:vsix",
     "build:extension": "node esbuild.js",
     "build:vsix": "vsce package --no-dependencies"

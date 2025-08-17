@@ -21,13 +21,8 @@ const getTargetLanguage = () => {
 	return targetLanguage;
 };
 
-const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-
-async function getTranslation(text) {
-    const apiKey = getApiKey();
-    const targetLanguage = getTargetLanguage();
-
-    const headers = { 'apikey': apiKey, 'Content-Type': 'application/json' };
+async function getTranslation(text, apiKey, targetLanguage) {
+        const headers = { 'apikey': apiKey, 'Content-Type': 'application/json' };
 
     const submitResponse = await axios.post(`${INTENTO_API_URL}/ai/text/translate`, {
         context: { text: [text], to: targetLanguage, from: '' },
@@ -41,7 +36,8 @@ async function getTranslation(text) {
 
     const maxRetries = 12;
     for (let i = 0; i < maxRetries; i++) {
-        await sleep(1000);
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
         const resultResponse = await axios.get(`${INTENTO_API_URL}/operations/${operationId}`, { headers });
         const result = resultResponse.data;
 
@@ -77,7 +73,9 @@ function activate(context) {
                 title: "Translating with Inten.to...",
                 cancellable: false
             }, async () => {
-                const translatedText = await getTranslation(selectedText);
+                const apiKey = getApiKey();
+                const targetLanguage = getTargetLanguage();
+                const translatedText = await getTranslation(selectedText, apiKey, targetLanguage);
 
                 await vscode.env.clipboard.writeText(translatedText);
                 vscode.window.showInformationMessage(`Translated & Copied: ${translatedText}`);
@@ -95,5 +93,9 @@ function deactivate() {}
 
 module.exports = {
     activate,
-    deactivate
+    deactivate,
+    // below is for testing
+    getApiKey,
+    getTargetLanguage,
+    getTranslation
 };
