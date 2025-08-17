@@ -26,9 +26,4 @@ A simple and fast VS Code extension to translate selected text using the [Inten.
 2. Press `Alt+Shift+T` or right-click and select `Inten.to: Translate`. 
 3. The translated text will be copied to your clipboard and displayed in a notification.
 
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
 **Enjoy!**

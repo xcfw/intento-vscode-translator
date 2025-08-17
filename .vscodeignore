@@ -8,3 +8,8 @@ vsc-extension-quickstart.md
 **/*.map
 **/eslint.config.mjs
 **/.vscode-test.*
+node_modules/**
+esbuild.js
+pnpm-lock.yaml
+README.md
+extension.js
