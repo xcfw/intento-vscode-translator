@@ -2,6 +2,8 @@
 
 ## Development Setup
 
+Make sure to read [vscode extenstion quickstart](vsc-extension-quickstart.md).
+
 1. Clone the repository
 2. Install dependencies: `pnpm install`
 3. Run tests: `pnpm test`
