@@ -6,7 +6,7 @@ on:
       - 'v*.*.*'
     branches:
       - test
-      
+
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
@@ -30,7 +30,7 @@ jobs:
         run: pnpm install --frozen-lockfile --prefer-offline
 
       - name: package vsix
-        run: pnpm run build:vsix
+        run: pnpm run build
 
       - name: github release
         uses: softprops/action-gh-release@v2
