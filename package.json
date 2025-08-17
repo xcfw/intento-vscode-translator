@@ -1,6 +1,6 @@
 {
   "name": "intento-vscode-translator",
-  "displayName": "Intento VSCode Translator",
+  "displayName": "Inten.to VSCode Translator",
   "description": "Translate selected text via Inten.to API",
   "version": "0.0.1",
   "engines": {
@@ -11,6 +11,10 @@
   ],
   "publisher": "local",
   "main": "./extension.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xcfw/intento-vscode-translator"
+  },
   "contributes": {
     "commands": [{
       "command": "intento.translate",
@@ -35,12 +39,12 @@
     ],
 
     "configuration": {
-      "title": "Intento VSCode Translator",
+      "title": "Inten.to VSCode Translator",
       "properties": {
         "intento.apiKey": {
           "type": "string",
           "default": "",
-          "description": "Your API key for the Inten.to API.",
+          "description": "Your API key for the Inten.to API. Get it from https://intento.ai/dashboard/api-keys",
           "secret": true
         },
         "intento.targetLanguage": {
