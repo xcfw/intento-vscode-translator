@@ -1,6 +1,6 @@
 # Inten.to Translator
 
-A simple and fast VS Code extension to translate selected text using the [Inten.to](https://github.com/intento/intento-api) API.
+Yet another simple VS Code extension to translate selected text using the [Inten.to](https://github.com/intento/intento-api) API.
 
 ## Features
 
@@ -12,13 +12,13 @@ A simple and fast VS Code extension to translate selected text using the [Inten.
 
 ## Setup
 
-1. **Install the extension.**
+1. **Install the extension from [releases section](https://github.com/xcfw/intento-vscode-translator/releases).**
 2. **Configure the API Key:** 
     - Open VS Code Settings ( `Ctrl/Cmd + ,` ).
     - Search for "Intento".
     - In the `Intento: Api Key` field, enter your API key from your Inten.to account.
 3. **Configure Target Language (Optional):** 
-    - In the same settings section, change the `Intento: Target Language` to your desired language code (e.g., `ru`, `de`, `fr`). The default is `en`.  
+    - In the same settings section, change the `Intento: Target Language` to your desired language code (e.g., `ru`, `pt`, `ur`, `ua`). The default is `en`.  
 
 ## Usage
 
@@ -27,3 +27,7 @@ A simple and fast VS Code extension to translate selected text using the [Inten.
 3. The translated text will be copied to your clipboard and displayed in a notification.
 
 **Enjoy!**
+
+## Contributing
+
+We welcome contributions! If you'd like to help improve this extension, please read our [Contributing Guide](CONTRIBUTING.md) for instructions on setting up your development environment, running tests, and submitting pull requests.
